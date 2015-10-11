@@ -4,20 +4,27 @@
 
 function createNewTodo(lbl) {
 
-    //console.log("createNewToDo");
-    //create new to-do with label and remove button
-    //return ex. <div><p>lbl<p/><button onclick="removeToDo(this)">-</button></div>
+    //Make div
+    var li = document.createElement("li");
+
+    //Make paragraph
+    var span = document.createElement("span");
+    span.innerHTML = lbl;
+
+    //Make remove button
+    var button = document.createElement("button");
+    button.onclick = removeToDo(li);
+    button.innerHTML = "-";
+
+    //Put span and button in li
+    li.appendChild(span);
+    li.appendChild(button);
+
+    return li;
 }
 
 function addNewTodo(newTodo) {
-    //console.log("addNewToDo");
-    //select list
     var todo_list = document.getElementById("todo-list");
-
-    //create new li, ex. <li> newToDo </li>
-    //todo
-
-    //adds new li to list
     todo_list.appendChild(newTodo);
 }
 
@@ -28,14 +35,12 @@ function getToDoLbl() {
     return val;
 }
 
-function removeToDo(id) {
+function removeToDo(element) {
     //console.log("removeToDo");
 }
 
 function onAddClicked() {
-
-    console.log("Result of getToDoLbl: " + getToDoLbl());
-    //var newToDoLbl = getToDoLbl();
-    //var newTodo = createNewTodo(newToDoLbl);
-    //addNewTodo(newTodo);
+    var newToDoLbl = getToDoLbl();
+    var newTodo = createNewTodo(newToDoLbl);
+    addNewTodo(newTodo);
 }
