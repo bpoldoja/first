@@ -13,7 +13,9 @@ function createNewTodo(lbl) {
 
     //Make remove button
     var button = document.createElement("button");
-    button.onclick = removeToDo(li);
+    button.onclick = function() {
+        removeToDo(li);
+    };
     button.innerHTML = "-";
 
     //Put span and button in li
@@ -36,7 +38,7 @@ function getToDoLbl() {
 }
 
 function removeToDo(element) {
-    //console.log("removeToDo");
+    element.parentNode.removeChild(element);
 }
 
 function onAddClicked() {
