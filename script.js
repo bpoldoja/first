@@ -4,13 +4,13 @@
 
 function createNewTodo(lbl) {
 
-    console.log("createNewToDo");
+    //console.log("createNewToDo");
     //create new to-do with label and remove button
     //return ex. <div><p>lbl<p/><button onclick="removeToDo(this)">-</button></div>
 }
 
 function addNewTodo(newTodo) {
-    console.log("addNewToDo");
+    //console.log("addNewToDo");
     //select list
     var todo_list = document.getElementById("todo-list");
 
@@ -22,18 +22,20 @@ function addNewTodo(newTodo) {
 }
 
 function getToDoLbl() {
-   console.log("getToDoLbl");
-    //return the label in the text box
+    var todo_input = document.getElementById("todo-input");
+    var val = todo_input.value;
+    todo_input.value = "";
+    return val;
 }
 
 function removeToDo(id) {
-    console.log("removeToDo");
+    //console.log("removeToDo");
 }
 
 function onAddClicked() {
-    console.log("onAddClicked");
 
-    var newToDoLbl = getToDoLbl();
-    var newTodo = createNewTodo(newToDoLbl);
-    addNewTodo(newTodo);
+    console.log("Result of getToDoLbl: " + getToDoLbl());
+    //var newToDoLbl = getToDoLbl();
+    //var newTodo = createNewTodo(newToDoLbl);
+    //addNewTodo(newTodo);
 }
